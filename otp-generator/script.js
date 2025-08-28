@@ -47,3 +47,21 @@ const otpChecker = (savedOTP , enteredOTP) => {
         }
     })
 }
+
+const moveToNextInput = (currentInput , nextInput = inputs) => {
+    const nextInputELement = nextInput[currentInput.tabIndex + 1]
+    const previousElement = nextInput[currentInput.tabIndex - 1]
+    const { length: inputLength } = currentInput.value
+
+    if(inputLength === maxLengthInput){
+        if(nextInputELement){
+            nextInputELement.focus()
+        }
+    } else if(inputLength < maxLengthInput) {
+        currentInput.addEventListener('keyup' , ev => {
+            if(ev.keyCode === 8 && previousElement){
+                previousElement.focus()
+            }
+        })
+    }
+}
