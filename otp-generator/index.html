@@ -7,6 +7,43 @@
     <title>OTP generator</title>
 </head>
 <body>
-    
+    <div class="tagProvider">
+        <div class = "card">
+            <h1>OTP Verification</h1>
+            <div>
+                <p class = "OTPplaceholder">
+                    Enter the code please :
+                    <br>
+                    <span>123456</span>
+                </p>
+                <div class = "otpWrapper">
+                    <input type = "number" tabindex = "0">
+                    <input type = "number" tabindex = "1">
+                    <input type = "number" tabindex = "2">
+                    <input type = "number" tabindex = "3">
+                    <input type = "number" tabindex = "4">
+                    <input type = "number" tabindex = "5">
+
+                    <div class = "OTPresult">
+                        <p></p>
+                    </div>
+                    
+                    <div>
+                        <button class = "otpBtnHandler">verify</button>
+                    </div>
+
+                    <div class = "otherWays">
+                        <p>Didn't recieve the code ? <br> <a href = "#">login with passwrod</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "modalBoxOverlay"></div>
+    <div class = "modalBox">
+        <h2>Oops</h2>
+        <p>something went wrong !</p>
+    </div>
 </body>
 </html>
