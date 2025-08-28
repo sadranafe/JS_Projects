@@ -18,6 +18,11 @@ window.addEventListener('DOMContentLoaded' , () => {
     OTPplaceholder.innerHTML = OTP
 })
 
+modalBoxOverlay.addEventListener('click' , () => {
+    modalBox.style.display = 'none'
+    modalBoxOverlay.style.display = 'none'
+})
+
 inputs.forEach( (ele , key) => {
     ele.addEventListener('input' , val => {
         if(val.target.value.length <= maxLengthInput) {
