@@ -1,13 +1,13 @@
 # 🚀 JavaScript Projects
 
 Welcome to my **JavaScript Projects Repository** ✨  
-This repo is a collection of mid-size projects built with **HTML, CSS, and JavaScript** —  
+This repo is a collection of projects built with **HTML, CSS, and JavaScript** —  
 each designed with **clean code, professional structure, and Git Flow** to simulate real-world development.  
 
 ---
 
 ## 🎯 Purpose
-Every project is crafted to highlight:
+Every project is built to highlight:
 - ✅ Well-structured and maintainable code  
 - ✅ Real-world inspired mini applications  
 - ✅ Modern development workflow with **Git & Git Flow**  
