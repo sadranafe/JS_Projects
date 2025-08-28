@@ -43,10 +43,18 @@ const otpChecker = (savedOTP , enteredOTP) => {
                 inputs.forEach(input => {
                     input.style.borderColor = '#14e14d'
                 })
+
+                otpBtn.addEventListener('click' , () => {
+                    otpModalHandler('successful✅' , 'welcome back' , true)
+                })
                 
             } else {
                 inputs.forEach(input => {
                     input.style.borderColor = '#e11414'
+                })
+
+                otpBtn.addEventListener('click' , () => {
+                    otpModalHandler('Ooops . . . Error❌' , 'invalid input' , true)
                 })
             }
         }
@@ -68,5 +76,14 @@ const moveToNextInput = (currentInput , nextInput = inputs) => {
                 previousElement.focus()
             }
         })
+    }
+}
+
+const otpModalHandler = (title , content , isOpen) => {
+    if(isOpen) {
+        modalBox.style.display = 'flex'
+        modalBoxOverlay.style.display = 'block'
+        modalBoxTitle.innerHTML = title;
+        modalBoxContent.innerHTML = content;
     }
 }
