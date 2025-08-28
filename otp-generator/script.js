@@ -22,9 +22,28 @@ inputs.forEach( (ele , key) => {
     ele.addEventListener('input' , val => {
         if(val.target.value.length <= maxLengthInput) {
             EnteredOTP.splice(key , 1 , val.target.value)
-            
+            otpChecker(OTP , EnteredOTP)
         } else {
             ele.value = EnteredOTP[key]
         }
     })
 })
+
+const otpChecker = (savedOTP , enteredOTP) => {
+    let enteredOTPInput = '';
+    enteredOTP.map(val => {
+        enteredOTPInput += val
+        if(enteredOTPInput.length === 6) {
+            if(savedOTP === Number(enteredOTPInput)) {
+                inputs.forEach(input => {
+                    input.style.borderColor = '#14e14d'
+                })
+                
+            } else {
+                inputs.forEach(input => {
+                    input.style.borderColor = '#e11414'
+                })
+            }
+        }
+    })
+}
