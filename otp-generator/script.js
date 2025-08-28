@@ -17,3 +17,14 @@ window.addEventListener('DOMContentLoaded' , () => {
     OTP = OTPgenerator()
     OTPplaceholder.innerHTML = OTP
 })
+
+inputs.forEach( (ele , key) => {
+    ele.addEventListener('input' , val => {
+        if(val.target.value.length <= maxLengthInput) {
+            EnteredOTP.splice(key , 1 , val.target.value)
+            
+        } else {
+            ele.value = EnteredOTP[key]
+        }
+    })
+})
