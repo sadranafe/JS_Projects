@@ -16,6 +16,15 @@ body {
     color: #f0f0f0;
 }
 
+.tagProvider {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
 h1 {
     text-align: center;
     font-size: 30px;
@@ -37,11 +46,88 @@ ul {
     margin-top: 20px;
 }
 
-.tagProvider {
-    width: 100%;
-    height: 100vh;
+li {
+    background-color: #1f1f22;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    user-select: none;
+    transition: .25s all;
+}
+
+.cardWrapper {
+    background-color: #18181b;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 420px;
+    padding: 25px 30px;
+    text-align: center;
+}
+
+.cardWrapper > div > input {
+    width: 270px;
+    border: none;
+    background-color: #27272a;
+    caret-color: #8b5cf6;
+    margin-right: 5px;
+}
+
+.cardWrapper > div > input , .cardWrapper > div > button {
+    padding: 12px 15px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.cardWrapper > div > button {
+    background-color: #8b5cf6;
+    transition: .2s all;
+}
+
+.cardWrapper > div > button:hover {
+    background-color: #7c3aed;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+.actions > button {
+    font-size: 20px;
+}
+
+.actions > button:nth-child(1) {
+    color: #8b5cf6;
+}
+
+.actions > button:nth-child(2) {
+    color: #f56548;
+}
+
+.actions > button:nth-child(3) {
+    color: #b8b8b8;
+}
+
+li.completed input {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+li > input {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 0 0 3px 0;
+    caret-color: #7c3aed;
+    transition: .25s all;
+}
+
+li > input:not(:read-only) {
+    border-bottom-color: #7c3aed;
 }
