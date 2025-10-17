@@ -9,7 +9,31 @@
     <link rel="stylesheet" href = "assets/css/media.css">
 </head>
 <body>
-    
+    <div class="tagProvider">
+        <header>
+            <h1>products</h1>
+            <div class="filters">
+                <input type = "text" id = "search" placeholder = "search products...">
+                <select class = "category">
+                    <option value = "all">all</option>
+                    <option value = "mobile">mobile</option>
+                    <option value = "cloth">cloth</option>
+                    <option value = "health">health</option>
+                    <option value = "accessories">accessories</option>
+                </select>
+
+                <select id = "sort">
+                    <option value="default">Sort by</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div class = "products"></div>
+        </main>
+    </div>
 </body>
 <script src="js/script.js"></script>
 </html>
