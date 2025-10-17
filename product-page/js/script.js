@@ -44,3 +44,11 @@ const showProducts = () => {
         sortSelect.disabled = false;
     }
 }
+
+window.addEventListener('DOMContentLoaded' , () => {
+    [categorySelect , sortSelect].forEach(el => {
+        el.addEventListener('change' , showProducts)
+    });
+    
+    showProducts()
+})
