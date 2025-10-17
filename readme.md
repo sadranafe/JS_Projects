@@ -29,6 +29,7 @@ Each project lives in its own folder with all necessary files.
 ## 🌟 Featured Projects
 
 1. **OTP Generator** : Generate and validate one-time passcodes with instant feedback.
+2. **TODO List** : A simple and elegant To-Do List built with HTML, CSS, and JavaScript, featuring smooth animations using (motion one)
 
 ( more projects comming soon . . . )
 
