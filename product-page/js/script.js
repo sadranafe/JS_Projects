@@ -45,10 +45,19 @@ const showProducts = () => {
     }
 }
 
+const debounce = (fn , delay) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn.apply(this , args) , delay);
+    }
+}
+
 window.addEventListener('DOMContentLoaded' , () => {
     [categorySelect , sortSelect].forEach(el => {
         el.addEventListener('change' , showProducts)
     });
     
+    searchInput.addEventListener('input' , debounce(() => showProducts(), 500))
     showProducts()
 })
