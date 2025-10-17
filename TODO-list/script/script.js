@@ -2,19 +2,32 @@ const todoList = document.querySelector(".taskList");
 const todoInput = document.querySelector(".todoInput");
 const addBtn = document.querySelector(".todoInput + button");
 
-const tasks = [];
+const saveTasks = () => localStorage.setItem('tasks' , JSON.stringify(tasks));
+const loadTasks = () => {
+    try {
+        return JSON.parse(localStorage.getItem('tasks')) || []
+    } catch {
+        localStorage.removeItem('tasks');
+        return [];
+    }
+}
+
+const tasks = loadTasks();
 
 const addTask = () => {
-    const enteredInput = todoInput.value.trim();
+    const enteredInput = todoInput.value.trim()
+
     const taskObj = { text: enteredInput, completed: false };
     tasks.push(taskObj);
     render(tasks);
+    saveTasks()
     todoInput.value = '';
 }
 
 const markTask = index => {
     const selectedTask = tasks[index]
     tasks.splice(index , 1 , { ...selectedTask , completed : !selectedTask.completed })
+    saveTasks()
     render(tasks)
 }
 
@@ -31,15 +44,19 @@ const editHandler = index => {
         editBtn.innerHTML = "<i class='bx bx-check'></i>"
     } else {
         const newValue = input.value.trim();
+
         tasks[index].text = newValue;
         input.setAttribute('readonly' , '');
         editBtn.innerHTML = "<i class='bx bx-pencil'></i>"
+        saveTasks()
         render(tasks)
     }
+    saveTasks()
 }
 
 const deleteHandler = index => {
     tasks.splice(index , 1);
+    saveTasks()
     render(tasks)
 }
 
